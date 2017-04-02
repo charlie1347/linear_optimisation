@@ -1,5 +1,5 @@
 
-##Using linear optimisation to calculate which stores to divest in a hypothetical merger
+## Using linear optimisation to calculate which stores to divest in a hypothetical merger
 
 Consider if Costa and Starbucks (two coffee chains with a considerable presence in London) decided to merge, creating CostaBucks. A merger of this size would induce scrutiny from the relevant authorities - e.g. the Competitions and Markets Authority (CMA) in the UK. When analysing a merger, the CMA look at the potential effects that the merger would have on customers - e.g. if the merger parties have the ability to raise prices.
 
