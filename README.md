@@ -1,5 +1,15 @@
-## Linear optimisation
 
-Example of using linear optimisation to solve local overlaps in a hypothetical merger.
+##Using linear optimisation to calculate which stores to divest in a hypothetical merger
 
-See code for full discussion.
+Consider if Costa and Starbucks (two coffee chains with a considerable presence in London) decided to merge, creating CostaBucks. A merger of this size would induce scrutiny from the relevant authorities - e.g. the Competitions and Markets Authority (CMA) in the UK. When analysing a merger, the CMA look at the potential effects that the merger would have on customers - e.g. if the merger parties have the ability to raise prices.
+
+A typical first step is to first define the market in which the merged parties operate in. For a retail merger, this is often done at the local level - so for each store, their local market will be defined as the area within a certain distance of the store. Within this area, the authorities will look at the level of competition, and the reduction in competition that the merger would cause.
+
+One measure of the reduction in competition is the fascia count reduction. A fascia is defined as a unique store brand - so a fascia count is the number of unique store brands within a market. If there were six stores in a market with brands Costa, Costa, Starbucks, Pret, Pret, Caffe Nero, then this market has four fascia. Following a merger between two parties, the number of fascia in a market for which both parties were previously present must necessarily reduce by one. In the example above, the resulting stores in the market would be CostaBucks, CostaBucks, CostaBucks, Pret, Pret, Caffe Nero - thus a four to three merger in the number of fascia.
+
+The decision on the outcome of a merger is usually not as a black and white as simply "allow" or "block". Instead, the CMA will often allow the merger subject to the condition that certain stores are divested - that is, sold to a third party. The stores needed to be sold are usually those that are in particularly problematic areas - i.e. those where there is the highest chance of a substantial lessening of competition (SLC). Using the fascia count reduction measure, this may be all those areas where the fascia reduction is a 4 to 3, 3 to 2 or 2 to 1. Using the same example, if the merging parties sold the original Starbucks store to Taylor St Baristas, then the resulting market would be CostaBucks, CostaBucks, Taylor St Baristas, Pret, Pret, Caffe Nero - four fascia, and thus no reduction in competition by per the fascia count reduction measure.
+
+In practice, it is of course hard to know who exactly will buy the divestment stores, or whether they will just be shut down/sold to a different industry entirely. The first step is therefore just to identify the stores that would hypothetically solve any SLC areas, as an "offering" to the authorities - i.e. in each SLC area, offer up either all the Costa or all the Starbucks stores.
+
+The merging parties will naturally want to sell as few stores as possible to solve all of the necessary SLC areas. Whilst the solution to the above example is simple, the solution can get far more complex when multiple markets overlap with each other, as selling one store will have knock-on effects in the overlapping markets. This problem is perfect for linear optimisation - minimise the number of stores sold subject to the constraint that the SLC is solved in each local market.
+
